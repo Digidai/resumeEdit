@@ -1,0 +1,526 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --primary-color: #3b82f6;
+  --primary-light: #93c5fd;
+  --primary-dark: #2563eb;
+  --secondary-color: #f3f4f6;
+  --heading-color: #1f2937;
+  --text-color: #4b5563;
+  --background-color: #f9fafb;
+  --paper-color: #ffffff;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --border-radius: 0.5rem;
+  --transition-speed: 0.3s;
+  --focus-ring: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enhanced card styling */
+.card {
+  background-color: var(--paper-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  transition: box-shadow var(--transition-speed) ease-in-out, transform var(--transition-speed) ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* Glass morphism effect for premium feel */
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all var(--transition-speed) ease;
+}
+
+.glass-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.resume-paper {
+  background-color: var(--paper-color);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+/* Enhanced Quill editor styling */
+.ql-container {
+  border-bottom-left-radius: var(--border-radius) !important;
+  border-bottom-right-radius: var(--border-radius) !important;
+  font-family: var(--font-family) !important;
+  border-color: #e2e8f0 !important;
+}
+
+.ql-toolbar {
+  border-top-left-radius: var(--border-radius) !important;
+  border-top-right-radius: var(--border-radius) !important;
+  background-color: #f8fafc !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  border-color: #e2e8f0 !important;
+}
+
+.ql-toolbar .ql-picker,
+.ql-toolbar button {
+  transition: all 0.2s ease;
+}
+
+.ql-toolbar button:hover,
+.ql-toolbar .ql-picker:hover {
+  transform: translateY(-1px);
+}
+
+.ql-editor {
+  min-height: 200px;
+  font-family: var(--font-family) !important;
+  padding: 1.5rem !important;
+  transition: background-color 0.2s ease;
+}
+
+.ql-editor:focus {
+  background-color: #fafbff;
+}
+
+.ql-editor h1 {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.ql-editor h2 {
+  color: var(--heading-color);
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.ql-editor h3 {
+  color: var(--heading-color);
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.ql-editor p {
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.ql-editor ul {
+  color: var(--text-color);
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.ql-editor li {
+  margin-bottom: 0.375rem;
+  position: relative;
+}
+
+/* Enhanced buttons with more modern styling */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #fff 10%, transparent 10%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.5s;
+}
+
+.btn:active::after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.4);
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.btn-secondary {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+}
+
+.btn-secondary:hover {
+  background-color: #059669;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.4);
+}
+
+.btn-secondary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+}
+
+.btn-outline {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  color: #374151;
+}
+
+.btn-outline:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+  transform: translateY(-1px);
+}
+
+.btn-outline:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(209, 213, 219, 0.5);
+}
+
+.btn-disabled {
+  background-color: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Template preview and selection styles */
+.preview-content {
+  padding: 0.75rem;
+  font-size: 10px;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.preview-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.preview-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.preview-content::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.preview-content h1 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+
+.preview-content h2 {
+  font-size: 0.9rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.preview-content h3 {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.1rem;
+  line-height: 1.3;
+}
+
+.preview-content p {
+  font-size: 0.7rem;
+  margin-bottom: 0.2rem;
+  line-height: 1.4;
+}
+
+.preview-content ul {
+  padding-left: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.preview-content li {
+  font-size: 0.65rem;
+  margin-bottom: 0.1rem;
+  line-height: 1.3;
+}
+
+/* Template classes with enhanced styling */
+.template-modern {
+  font-family: 'Inter', sans-serif;
+}
+
+.template-modern .ql-editor h1,
+.template-modern .preview-content h1 {
+  color: #3b82f6;
+  border-bottom: none;
+}
+
+.template-modern .ql-editor h2,
+.template-modern .preview-content h2 {
+  color: #1f2937;
+  border-bottom: 2px solid #e5e7eb;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.template-classic {
+  font-family: 'Merriweather', serif;
+}
+
+.template-classic .ql-editor h1,
+.template-classic .preview-content h1 {
+  color: #7F1D1D;
+  font-weight: normal;
+  border-bottom: 1px solid #7F1D1D;
+  padding-bottom: 0.5rem;
+}
+
+.template-classic .ql-editor h2,
+.template-classic .preview-content h2 {
+  color: #1E293B;
+  font-weight: normal;
+  border-bottom: 1px solid #E2E8F0;
+  font-style: italic;
+}
+
+.template-professional {
+  font-family: 'Roboto', sans-serif;
+}
+
+.template-professional .ql-editor h1,
+.template-professional .preview-content h1 {
+  color: #047857;
+  font-weight: bold;
+}
+
+.template-professional .ql-editor h2,
+.template-professional .preview-content h2 {
+  color: #064E3B;
+  background-color: #ECFDF5;
+  padding: 0.5rem;
+  border-bottom: none;
+  border-left: 3px solid #047857;
+}
+
+/* Improve loading indicator with subtle animation */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  backdrop-filter: blur(3px);
+}
+
+.spinner {
+  border: 3px solid rgba(59, 130, 246, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-left-color: var(--primary-color);
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--heading-color);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Enhanced animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+.slide-in {
+  animation: slideInFromRight 0.5s ease-out forwards;
+}
+
+.scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* Print styles for better PDF generation */
+@media print {
+  body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .resume-paper {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .ql-toolbar {
+    display: none !important;
+  }
+  
+  .ql-container {
+    border: none !important;
+  }
+  
+  .ql-editor {
+    padding: 0 !important;
+  }
+} 
+
+/* Enhanced form inputs */
+.form-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background-color: white;
+  color: #111827;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.form-input:hover {
+  border-color: #9ca3af;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: var(--focus-ring);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563;
+} 
