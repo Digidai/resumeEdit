@@ -8,8 +8,6 @@
 
 ResumeEdit 是一个现代化的在线简历编辑器，专为求职者和专业人士设计。它提供简单直观的界面，让用户可以轻松创建、编辑和导出专业简历，同时支持不同的模板和格式。
 
-![ResumeEdit Screenshot](https://via.placeholder.com/800x400?text=ResumeEdit+Screenshot)
-
 ## ✨ 特点
 
 - 🔄 **实时预览**：边编辑边查看简历效果
