@@ -107,7 +107,7 @@ ResumeEdit 提供了多种自定义选项：
 
 **Your Name**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
+- GitHub: [@digidai](https://github.com/digidai)
 
 ## 🙏 致谢
 
